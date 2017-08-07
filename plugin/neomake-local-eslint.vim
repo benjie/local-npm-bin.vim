@@ -7,7 +7,7 @@ let g:loaded_neomake_local_npm = 1
 " Navigate up the tree looking for node_module/.bin/{binname}; falling back to
 " `npm bin` directory
 function! GetNpmBin(binname)
-  let dir = getcwd()
+  let dir = expand("%:p:h")
   while ! isdirectory(dir . '/node_modules')
     let dir = fnamemodify(dir, ':h')
     if dir == '/'
