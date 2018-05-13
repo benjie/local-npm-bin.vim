@@ -5,7 +5,7 @@ let g:flow#flowpath = GetNpmBin('flow')
 
 " Neoformat javascript exes
 
-if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'js-beautify') > 0
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'js-beautify') >= 0
   if ! exists('b:neoformat_javascript_jsbeautify')
     if exists('g:neoformat_javascript_jsbeautify')
       let b:neoformat_javascript_jsbeautify = g:neoformat_javascript_jsbeautify
@@ -16,7 +16,7 @@ if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascr
   let b:neoformat_javascript_jsbeautify.exe = GetNpmBin('js-beautify')
 endif
 
-if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'clang-format') > 0
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'clang-format') >= 0
   if ! exists('b:neoformat_javascript_clangformat')
     if exists('g:neoformat_javascript_clangformat')
       let b:neoformat_javascript_clangformat = g:neoformat_javascript_clangformat
@@ -27,7 +27,7 @@ if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascr
   let b:neoformat_javascript_clangformat.exe = GetNpmBin('clang-format')
 endif
 
-if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'prettydiff') > 0
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'prettydiff') >= 0
   if ! exists('b:neoformat_javascript_prettydiff')
     if exists('g:neoformat_javascript_prettydiff')
       let b:neoformat_javascript_prettydiff = g:neoformat_javascript_prettydiff
@@ -38,7 +38,7 @@ if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascr
   let b:neoformat_javascript_prettydiff.exe = GetNpmBin('prettydiff')
 endif
 
-if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'esformatter') > 0
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'esformatter') >= 0
   if ! exists('b:neoformat_javascript_esformatter')
     if exists('g:neoformat_javascript_esformatter')
       let b:neoformat_javascript_esformatter = g:neoformat_javascript_esformatter
@@ -49,7 +49,7 @@ if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascr
   let b:neoformat_javascript_esformatter.exe = GetNpmBin('esformatter')
 endif
 
-if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'prettier') > 0
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'prettier') >= 0
   if ! exists('b:neoformat_javascript_prettier')
     if exists('g:neoformat_javascript_prettier')
       let b:neoformat_javascript_prettier = g:neoformat_javascript_prettier
@@ -60,7 +60,7 @@ if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascr
   let b:neoformat_javascript_prettier.exe = GetNpmBin('prettier')
 endif
 
-if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'prettier-eslint') > 0
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'prettier-eslint') >= 0
   if ! exists('b:neoformat_javascript_prettiereslint')
     if exists('g:neoformat_javascript_prettiereslint')
       let b:neoformat_javascript_prettiereslint = g:neoformat_javascript_prettiereslint
@@ -71,7 +71,7 @@ if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascr
   let b:neoformat_javascript_prettiereslint.exe = GetNpmBin('prettier-eslint')
 endif
 
-if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'eslint_d') > 0
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'eslint_d') >= 0
   if ! exists('b:neoformat_javascript_eslint_d')
     if exists('g:neoformat_javascript_eslint_d')
       let b:neoformat_javascript_eslint_d = g:neoformat_javascript_eslint_d
@@ -82,7 +82,7 @@ if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascr
   let b:neoformat_javascript_eslint_d.exe = GetNpmBin('eslint_d')
 endif
 
-if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'standard') > 0
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'standard') >= 0
   if ! exists('b:neoformat_javascript_standard')
     if exists('g:neoformat_javascript_standard')
       let b:neoformat_javascript_standard = g:neoformat_javascript_standard
