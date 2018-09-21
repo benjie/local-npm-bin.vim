@@ -1,3 +1,3 @@
 runtime plugin/neomake-local-eslint.vim
 
-let b:neomake_javascript_eslint_exe = GetNpmBin('eslint')
+let b:neomake_vue_eslint_exe = GetNpmBin('eslint')
