@@ -22,3 +22,14 @@ if exists('g:neoformat_enabled_typescript') && index(g:neoformat_enabled_typescr
   endif
   let b:neoformat_typescript_prettier.exe = GetNpmBin('prettier')
 endif
+
+if exists('g:neoformat_enabled_typescript') && index(g:neoformat_enabled_typescript, 'eslint_d') >= 0
+  if ! exists('b:neoformat_typescript_eslint_d')
+    if exists('g:neoformat_typescript_eslint_d')
+      let b:neoformat_typescript_eslint_d = g:neoformat_typescript_eslint_d
+    else
+      let b:neoformat_typescript_eslint_d = neoformat#formatters#typescript#eslint_d()
+    endif
+  endif
+  let b:neoformat_typescript_eslint_d.exe = GetNpmBin('eslint_d')
+endif
