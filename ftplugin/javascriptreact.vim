@@ -60,6 +60,17 @@ if exists('g:neoformat_enabled_javascriptreact') && index(g:neoformat_enabled_ja
   let b:neoformat_javascriptreact_prettier.exe = GetNpmBin('prettier')
 endif
 
+if exists('g:neoformat_enabled_javascriptreact') && index(g:neoformat_enabled_javascriptreact, 'biome') >= 0
+  if ! exists('b:neoformat_javascriptreact_biome')
+    if exists('g:neoformat_javascriptreact_biome')
+      let b:neoformat_javascriptreact_biome = g:neoformat_javascriptreact_biome
+    else
+      let b:neoformat_javascriptreact_biome = neoformat#formatters#javascriptreact#biome()
+    endif
+  endif
+  let b:neoformat_javascriptreact_biome.exe = GetNpmBin('biome')
+endif
+
 if exists('g:neoformat_enabled_javascriptreact') && index(g:neoformat_enabled_javascriptreact, 'prettier-eslint') >= 0
   if ! exists('b:neoformat_javascriptreact_prettiereslint')
     if exists('g:neoformat_javascriptreact_prettiereslint')

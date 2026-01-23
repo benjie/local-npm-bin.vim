@@ -60,6 +60,17 @@ if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascr
   let b:neoformat_javascript_prettier.exe = GetNpmBin('prettier')
 endif
 
+if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'biome') >= 0
+  if ! exists('b:neoformat_javascript_biome')
+    if exists('g:neoformat_javascript_biome')
+      let b:neoformat_javascript_biome = g:neoformat_javascript_biome
+    else
+      let b:neoformat_javascript_biome = neoformat#formatters#javascript#biome()
+    endif
+  endif
+  let b:neoformat_javascript_biome.exe = GetNpmBin('biome')
+endif
+
 if exists('g:neoformat_enabled_javascript') && index(g:neoformat_enabled_javascript, 'prettier-eslint') >= 0
   if ! exists('b:neoformat_javascript_prettiereslint')
     if exists('g:neoformat_javascript_prettiereslint')

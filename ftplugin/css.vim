@@ -55,3 +55,14 @@ if exists('g:neoformat_enabled_css') && index(g:neoformat_enabled_css, 'prettier
   let b:neoformat_css_prettier.exe = GetNpmBin('prettier')
   endif
 endif
+
+if exists('g:neoformat_enabled_css') && index(g:neoformat_enabled_css, 'biome') >= 0
+  if ! exists('b:neoformat_css_biome')
+    if exists('g:neoformat_css_biome')
+      let b:neoformat_css_biome = g:neoformat_css_biome
+    else
+      let b:neoformat_css_biome = neoformat#formatters#css#biome()
+    endif
+  let b:neoformat_css_biome.exe = GetNpmBin('biome')
+  endif
+endif

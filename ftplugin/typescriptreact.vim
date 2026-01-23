@@ -23,6 +23,17 @@ if exists('g:neoformat_enabled_typescriptreact') && index(g:neoformat_enabled_ty
   let b:neoformat_typescriptreact_prettier.exe = GetNpmBin('prettier')
 endif
 
+if exists('g:neoformat_enabled_typescriptreact') && index(g:neoformat_enabled_typescriptreact, 'biome') >= 0
+  if ! exists('b:neoformat_typescriptreact_biome')
+    if exists('g:neoformat_typescriptreact_biome')
+      let b:neoformat_typescriptreact_biome = g:neoformat_typescriptreact_biome
+    else
+      let b:neoformat_typescriptreact_biome = neoformat#formatters#typescriptreact#biome()
+    endif
+  endif
+  let b:neoformat_typescriptreact_biome.exe = GetNpmBin('biome')
+endif
+
 if exists('g:neoformat_enabled_typescriptreact') && index(g:neoformat_enabled_typescriptreact, 'eslint_d') >= 0
   if ! exists('b:neoformat_typescriptreact_eslint_d')
     if exists('g:neoformat_typescriptreact_eslint_d')

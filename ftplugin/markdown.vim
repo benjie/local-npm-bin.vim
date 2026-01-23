@@ -11,3 +11,14 @@ if exists('g:neoformat_enabled_markdown') && index(g:neoformat_enabled_markdown,
   endif
   let b:neoformat_markdown_prettier.exe = GetNpmBin('prettier')
 endif
+
+if exists('g:neoformat_enabled_markdown') && index(g:neoformat_enabled_markdown, 'biome') >= 0
+  if ! exists('b:neoformat_markdown_biome')
+    if exists('g:neoformat_markdown_biome')
+      let b:neoformat_markdown_biome = g:neoformat_markdown_biome
+    else
+      let b:neoformat_markdown_biome = neoformat#formatters#markdown#biome()
+    endif
+  endif
+  let b:neoformat_markdown_biome.exe = GetNpmBin('biome')
+endif
